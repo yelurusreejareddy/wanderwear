@@ -4,6 +4,8 @@ Multi-agent travel planning and personal styling system, built from scratch in P
 
 Live demo: https://main.d1xhj0as3larx1.amplifyapp.com
 
+![WanderWear](assets/screenshot.png)
+
 ## What it does
 
 - Trip planning. Takes a request such as "3 days in Chicago in October, flying" and returns a day-by-day itinerary with a connected map route per day, weather-aware notes, and travel times measured by a routing engine rather than guessed.
