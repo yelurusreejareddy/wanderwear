@@ -15,7 +15,7 @@ Live demo: https://main.d1xhj0as3larx1.amplifyapp.com
 
 ## Architecture
 
-```
+
   Phone / laptop  (installable PWA)
         |  HTTPS
         |
@@ -32,7 +32,7 @@ Live demo: https://main.d1xhj0as3larx1.amplifyapp.com
         |                        |---- OSRM / Nominatim  (routing, geocoding)
         |
    [ a hard 30-second gateway timeout constrains the whole request ]
-```
+
 
 ## Engineering
 
