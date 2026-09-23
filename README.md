@@ -15,18 +15,24 @@ Live demo: https://main.d1xhj0as3larx1.amplifyapp.com
 
 ## Architecture
 
-A request travels through these layers in order:
-
-1. **Phone or laptop**: the installable PWA, over HTTPS
-2. **AWS Amplify**: hosts the Next.js frontend as a static export
-3. **API Gateway (HTTP API)**: the public HTTPS front door, billed per request
-4. **VPC Link and Cloud Map**: connect the gateway privately to the backend
-5. **ECS Fargate task (ARM64, FastAPI)**: the Python backend, which calls:
-   - **Supabase**: Postgres with row-level security, Auth, and Storage
-   - **OpenRouter**: language and vision models
-   - **OSRM and Nominatim**: routing and geocoding
-
-The whole request is constrained by a hard 30-second gateway timeout.
+```
+  Phone / laptop  (installable PWA)
+        |  HTTPS
+        |
+  AWS Amplify ............ Next.js frontend, static export
+        |  API calls
+        |
+  API Gateway (HTTP API) . public HTTPS front door, per-request billing
+        |
+        |
+  VPC Link ---- Cloud Map ---- ECS Fargate task (ARM64, FastAPI)
+        |                        |
+        |                        |---- Supabase   (Postgres, row-level security, Auth, Storage)
+        |                        |---- OpenRouter  (language and vision models)
+        |                        |---- OSRM / Nominatim  (routing, geocoding)
+        |
+   [ a hard 30-second gateway timeout constrains the whole request ]
+```
 
 ## Engineering
 
