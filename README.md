@@ -46,7 +46,7 @@ Live demo: https://main.d1xhj0as3larx1.amplifyapp.com
 ## Stack
 
 - Frontend: Next.js static export, Progressive Web App, AWS Amplify
-- Backend: Python, FastAPI, a hand-built agent loop
+- Backend: Python, FastAPI, LangGraph (the agent loop was first written by hand, then rebuilt as a LangGraph graph)
 - Data: Supabase (Postgres with row-level security, Auth, signed Storage URLs)
 - Models: language and vision models via OpenRouter
 - Infrastructure: Docker (ARM64), Amazon ECR, ECS on Fargate, API Gateway, VPC Link, Cloud Map
@@ -69,4 +69,4 @@ The application code is kept private. WanderWear is a live product that handles 
 
 ## Goal
 
-To build a real, defensible multi-agent product end to end, from a hand-drawn design through a hand-written agent loop to a secure, concurrent, self-deploying service on AWS.
+To build a real, defensible multi-agent product end to end, from a hand-drawn design through an agent loop written by hand and then rebuilt in LangGraph, to a secure, concurrent, self-deploying service on AWS.
